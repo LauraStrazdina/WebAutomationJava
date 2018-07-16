@@ -18,9 +18,9 @@ public class SignupSteps {
         selectMyAccountMenu();
     }
 
-    @And("^I select Sign up button$")
-    public void iSelectSignUpButton() throws Throwable {
-        selectSignUpButton();
+    @And("^I select Sign up button from My account menu$")
+    public void iSelectSignUpButtonFromMyAccountMenu() throws Throwable {
+        selectSignUpButtonMyAccountMenu();
     }
 
     @And("^I enter First name$")
@@ -53,9 +53,15 @@ public class SignupSteps {
         confirmPassword();
     }
 
+    @And("^I select Sign up button from sign up form$")
+    public void iSelectSignUpButtonFromSignUpForm() throws Throwable {
+        selectSignUpButtonSignUpForm();
+    }
+
     @Then("^user account page is opened$")
     public void userAccountPageIsOpened() throws Throwable {
         System.out.println("ACCOUNT CREATED!");
     }
 }
 }
+
