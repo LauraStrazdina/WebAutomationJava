@@ -1,46 +1,28 @@
 package stepdefinitions;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import general.User;
+import pages.login.LoginPageObject;
 
 public class LoginSteps {
 
-    @Given("^I have opened homepage$")
-    public void iHaveOpenedHomepage() throws Throwable {
-        System.out.println("OPEN HOMEPAGE");
-    }
-
-    @When("^I select My account menu$")
-    public void iSelectMyAccountMenu() throws Throwable {
-        selectMyAccountMenu();
-    }
-
-    @And("^I select Login from my account menu$")
-    public void iSelectLoginFromMyAccountMenu() throws Throwable {
-        selectLogInButtonMyAccountMenu();
-    }
+    private LoginPageObject login = new LoginPageObject();
+    private User user = new User();
 
     @And("^I enter Email in login form $")
     public void iEnterEmailAddressInLoginForm() throws Throwable {
-        enterEmailAddressLoginForm();
+        login.enterEmail(user.getEmailAddress());
     }
 
     @And("^I enter PasswordInLoginForm$")
     public void iEnterPasswordLoginForm() throws Throwable {
-        enterPassword();
+        login.enterPassword(user.getPassword());
     }
 
     @And("^I select login from login form$")
     public void iConfirmPassword() throws Throwable {
-        selectLogInButtonLoginForm();
+        login.selectLoginButton();
     }
 
-    @Then("^I  have logged in$")
-    public void iHaveLoggedIn() throws Throwable {
-        System.out.println("YOU HAVE LOGGED IN!");
-    }
 }
 

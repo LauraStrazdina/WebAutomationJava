@@ -10,41 +10,42 @@ public class SignupSteps {
 
     private SignUpPageObject signup = new SignUpPageObject();
     private User user = new User();
+    private User userTwo = new User("Janis", "Berzins");
 
     @And("^I enter First name$")
     public void iEnterFirstName() throws Throwable {
-        signup.enterFirstName(generateRandomString());
+        signup.enterFirstName(user.getFirstName());
     }
 
     @And("^I enter Last name$")
     public void iEnterLastName() throws Throwable {
-        signup.enterLastName(generateRandomString());
+        signup.enterLastName(user.getLastName());
     }
 
     @And("^I enter Mobile number$")
     public void iEnterMobileNumber() throws Throwable {
-        signup.enterMobileNumber(generateRandomPhoneNumber());
+        signup.enterMobileNumber(user.getMobileNumber());
     }
 
     @And("^I enter Email address$")
     public void iEnterEmailAddress() throws Throwable {
-        signup.enterEmail(generateRandomEmail());
+        signup.enterEmail(user.getEmailAddress());
     }
 
     @And("^I enter Password$")
     public void iEnterPassword() throws Throwable {
-        signup.enterPassword(generateRandomString());
+        signup.enterPassword(user.getPassword());
     }
 
     @And("^I confirm Password$")
     public void iConfirmPassword() throws Throwable {
-        signup.enterConfirmationPassword(generateRandomString());
+        signup.enterConfirmationPassword(user.getPassword());
     }
 
-    /*@And("^I select Sign up button from sign up form$")
+    @And("^I select Sign up button from sign up form$")
     public void iSelectSignUpButtonFromSignUpForm() throws Throwable {
-        selectSignUpButtonSignUpForm();
-    }*/
+        signup.selectSignUpButton();
+    }
 }
 
 

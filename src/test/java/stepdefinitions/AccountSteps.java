@@ -8,4 +8,10 @@ public class AccountSteps {
     public void userAccountPageIsOpened() throws Throwable {
         System.out.println("ACCOUNT CREATED!");
     }
+
+
+    @Then("^I have logged in$")
+    public void iHaveLoggedIn() throws Throwable {
+        System.out.println("YOU HAVE LOGGED IN!");
+    }
 }
