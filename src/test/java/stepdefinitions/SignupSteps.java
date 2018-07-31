@@ -4,8 +4,6 @@ import cucumber.api.java.en.And;
 import general.User;
 import pages.signup.SignUpPageObject;
 
-import static utils.RandomGenerator.*;
-
 public class SignupSteps {
 
     private SignUpPageObject signup = new SignUpPageObject();
